@@ -1,7 +1,4 @@
 # My_portfolio
-
-<div align="center">
-	<h1> My Portfolio </h1>
 </div>
 
 <!-- ## Snapshot 📸
@@ -57,4 +54,3 @@ npm run build
 ## Credits ✍
 
 Implementation by [@Abhishek-K](https://github.com/abhishekalangad)
->>>>>>> c8a5875 (Uploaded portfolio project)
