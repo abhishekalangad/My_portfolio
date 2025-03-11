@@ -87,18 +87,17 @@ export const PHP = [
 	// },
 ];
 
-// export const ReactNativeData = [
-// 	{
-// 		title: "Serenify",
-// 		desc: "A mobile app combining guided meditation and daily affirmations to inspire and uplift",
-// 		tech: [
-// 			"React Native",
-// 			"Expo",
-// 			"Expo-Router",
-// 			"Expo-Vector-Icons",
-// 			"Native Wind",
-// 		],
-// 		gitlink: "//github.com/Pappyjay23/Serenify",
-// 		app: "//drive.google.com/uc?export=download&id=1WGhO4zmFH6C05_PY9C5CYYEUVNCNVRHJ",
-// 	},
-// ];
+export const HTMLData = [
+	{
+		title: "AcadMate",
+		desc: "AcadMate is a study material platform where users get notes of MCA and MBA",
+		tech: [
+			"HTML",
+			"CSS",
+			"SCSS",
+			"JavaScript"
+		],
+		gitlink: "//github.com/abhishekalangad/AcadMate",
+		site: "//acadmate-eight.vercel.app/	",
+	},
+];

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Works.css";
 import { motion } from "framer-motion";
-import { ReactData, PHP } from "../data/WorkData";
+import { ReactData, PHP, HTMLData } from "../data/WorkData";
 import WorkCard from "./WorkCard";
 
 const Works = () => {
@@ -17,7 +17,7 @@ const Works = () => {
 	const tabData = [
 		{ id: "react", label: "React", data: ReactData },
 		{ id: "PHP", label: "PHP", data: PHP },
-		// { id: "react-native", label: "React Native", data: ReactNativeData },
+		{ id: "HTML", label: "HTML", data: HTMLData }
 	];
 
 	return (
