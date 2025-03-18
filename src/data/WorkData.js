@@ -95,9 +95,22 @@ export const HTMLData = [
 			"HTML",
 			"CSS",
 			"SCSS",
+			"Bootstrap",
 			"JavaScript"
 		],
 		gitlink: "//github.com/abhishekalangad/AcadMate",
 		site: "//acadmate-eight.vercel.app/	",
+	},
+	{
+		title: "Shoe_Store",
+		desc: "Shoe Store E-commerce is a modern and responsive online shoe store built with HTML, CSS, and JavaScript.",
+		tech: [
+			"HTML",
+			"CSS",
+			"Bootstrap",
+			"JavaScript"
+		],
+		gitlink: "//github.com/abhishekalangad/Shoe_Store_Ecommerce_WebSite",
+		site: "//shoe-store-ecommerce-web-site.vercel.app",
 	},
 ];
