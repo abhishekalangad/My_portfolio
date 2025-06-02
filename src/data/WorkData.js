@@ -87,6 +87,35 @@ export const PHP = [
 	// },
 ];
 
+export const Python = [
+	{
+		title: "ShutterBug",
+		desc: "ShutterBug is a Photography platform where users get Photographers, Models of different categories",
+		tech: [
+			"HTML",
+			"CSS",
+			"SCSS",
+			"Bootstrap",
+			"JavaScript",
+			"Python",
+			"Django"
+		],
+		gitlink: "",
+		site: "",
+	},
+// 	{
+// 		title: "Shoe_Store",
+// 		desc: "Shoe Store E-commerce is a modern and responsive online shoe store built with HTML, CSS, and JavaScript.",
+// 		tech: [
+// 			"HTML",
+// 			"CSS",
+// 			"Bootstrap",
+// 			"JavaScript"
+// 		],
+// 		gitlink: "//github.com/abhishekalangad/Shoe_Store_Ecommerce_WebSite",
+// 		site: "//shoe-store-ecommerce-web-site.vercel.app",
+// 	},
+ ];
 export const HTMLData = [
 	{
 		title: "AcadMate",

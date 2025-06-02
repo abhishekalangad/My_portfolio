@@ -108,10 +108,10 @@ const Contact = () => {
 								</Link>
 								<a
 									className='hello-links'
-									href='mailto:abhishekalangad@gmail.com'
+									href='mailto:abhishek.k@lead.ac.in'
 									target='_blank'
 									rel='noreferrer'>
-									abhishekalangad@gmail.com
+									abhishek.k@lead.ac.in
 								</a>
 							</div>
 						</motion.div>

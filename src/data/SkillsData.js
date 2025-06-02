@@ -1,24 +1,25 @@
-import { DiJavascript1 } from "react-icons/di";
+import { 
+	DiJavascript1,
+	 DiMysql 
+	} from "react-icons/di";
 import {
 	FaCss3Alt,
-	FaDatabase,
-	FaGithub,
 	FaHtml5,
 	FaReact,
-	FaBootstrap
 
 } from "react-icons/fa";
 // import { RiVuejsLine } from "react-icons/ri";
 import {
 	
-	SiFramer,
-	SiRedux,
-	SiTailwindcss,
+	
 	SiTypescript,
 	SiPython,
 	SiPhp,
 	SiVercel,
-	SiFlask
+	SiFlask,
+	SiFlutter,
+	SiDjango,
+	SiGithub
 } from "react-icons/si";
 // import { TbBrandReactNative } from "react-icons/tb";
 
@@ -33,7 +34,7 @@ export const SkillsData = [
 	},
 	{
 		name: "Javascript",
-		icon: <DiJavascript1 />,
+		icon: <DiJavascript1/>,
 	},
 	{
 		name: "React Js",
@@ -44,10 +45,10 @@ export const SkillsData = [
 		icon: <SiTypescript />,
 	},
 	
-	// {
-	// 	name: "Next Js",
-	// 	icon: <SiNextdotjs />,
-	// },
+	{
+		name: "Flutter",
+		icon: <SiFlutter />,
+	},
 	// {
 	// 	name: "Vue Js",
 	// 	icon: <RiVuejsLine />, 
@@ -63,35 +64,35 @@ export const SkillsData = [
 	},
 	{
 		name: "Git",
-		icon: <FaGithub />,
+		icon: <SiGithub/>,
 	},
 	{
 		name: "Flask",
 		icon: <SiFlask />,
 	},
 	{
-		name: "Tailwind",
-		icon: <SiTailwindcss />,
+		name: "Django",
+		icon: <SiDjango/>,
 	},
 	{
 		name: "Vercel",
 		icon: <SiVercel />,
 	},
 	{
-		name: "database",
-		icon: <FaDatabase />,
+		name: "MySQL",
+		icon: <DiMysql />,
 	},
-	{
-		name: "Framer Motion",
-		icon: <SiFramer />,
-	},
+	// {
+	// 	name: "Android",
+	// 	icon: <SiAndroid />,
+	// },
 	
-	{
-		name: "Redux",
-		icon: <SiRedux />,
-	},
-	{
-		name: "Bootstrap",
-		icon: <FaBootstrap />,
-	},
+	// {
+	// 	name: "Redux",
+	// 	icon: <SiRedux />,
+	// },
+	// {
+	// 	name: "Bootstrap",
+	// 	icon: <FaBootstrap />,
+	// },
 ];
