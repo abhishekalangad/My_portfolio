@@ -146,7 +146,7 @@ export const javascript = [
 export const Flutter = [
 	{
 		title: "IncubateX",
-		desc: "IncubateX is a mobile app which helps users track and analyze key aspects of their startup journey, including growth metrics, milestones, and performance reports.",
+		desc: "IncubateX is a mobile app which helps users track and analyze growth metrics, milestones, and performance reports.",
 		tech: [
 			"HTML",
 			"CSS",
