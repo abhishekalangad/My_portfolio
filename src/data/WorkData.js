@@ -143,3 +143,28 @@ export const HTMLData = [
 		site: "//shoe-store-ecommerce-web-site.vercel.app",
 	},
 ];
+export const Flutter = [
+	{
+		title: "IncubateX",
+		desc: "IncubateX is a mobile app which helps users track and analyze key aspects of their startup journey, including growth metrics, milestones, and performance reports. It provides real-time insights to monitor progress and supports better decision-making for business development.",
+		tech: [
+			"HTML",
+			"CSS",
+			"Dart"
+		],
+		gitlink: "//github.com/abhishekalangad/IncubateX",
+		site: "",
+	},
+// 	{
+// 		title: "Shoe_Store",
+// 		desc: "Shoe Store E-commerce is a modern and responsive online shoe store built with HTML, CSS, and JavaScript.",
+// 		tech: [
+// 			"HTML",
+// 			"CSS",
+// 			"Bootstrap",
+// 			"JavaScript"
+// 		],
+// 		gitlink: "//github.com/abhishekalangad/Shoe_Store_Ecommerce_WebSite",
+// 		site: "//shoe-store-ecommerce-web-site.vercel.app",
+// 	},
+ ];

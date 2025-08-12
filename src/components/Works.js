@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Works.css";
 import { motion } from "framer-motion";
-import { ReactData, PHP, Python, HTMLData } from "../data/WorkData";
+import { ReactData, PHP, Python, HTMLData, Flutter } from "../data/WorkData";
 import WorkCard from "./WorkCard";
 
 const Works = () => {
@@ -18,7 +18,8 @@ const Works = () => {
 		{ id: "react", label: "React", data: ReactData },
 		{ id: "PHP", label: "PHP", data: PHP },
 		{ id: "HTML", label: "HTML", data: HTMLData },
-		{ id: "python", label: "Python", data: Python }
+		{ id: "python", label: "Python", data: Python },
+		{ id: "Flutter", label: "Flutter", data: Flutter }
 	];
 
 	return (
