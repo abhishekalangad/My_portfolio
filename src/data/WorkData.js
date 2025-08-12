@@ -116,7 +116,7 @@ export const Python = [
 // 		site: "//shoe-store-ecommerce-web-site.vercel.app",
 // 	},
  ];
-export const HTMLData = [
+export const javascript = [
 	{
 		title: "AcadMate",
 		desc: "AcadMate is a study material platform where users get notes of MCA and MBA",
