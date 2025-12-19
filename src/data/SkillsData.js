@@ -82,17 +82,4 @@ export const SkillsData = [
 		name: "MySQL",
 		icon: <DiMysql />,
 	},
-	// {
-	// 	name: "Android",
-	// 	icon: <SiAndroid />,
-	// },
-	
-	// {
-	// 	name: "Redux",
-	// 	icon: <SiRedux />,
-	// },
-	// {
-	// 	name: "Bootstrap",
-	// 	icon: <FaBootstrap />,
-	// },
 ];
