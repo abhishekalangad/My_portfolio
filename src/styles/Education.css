@@ -1,0 +1,207 @@
+/* Education.css - Unique Zig-Zag Glassmorphism Design */
+
+.education {
+    background-color: var(--section-bgd);
+    width: 100%;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.education .container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Central Line */
+.education-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--nav-blue), transparent);
+    box-shadow: 0 0 15px var(--nav-blue);
+    z-index: 0;
+}
+
+.education-card-wrapper {
+    position: relative;
+    width: 50%;
+    z-index: 1;
+}
+
+/* Zig-Zag Logic */
+.education-card-wrapper:nth-child(odd) {
+    align-self: flex-start;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.education-card-wrapper:nth-child(even) {
+    align-self: flex-end;
+    padding-left: 3rem;
+    text-align: left;
+}
+
+/* The Dot on the Line */
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: var(--soft-white);
+    border: 2px solid var(--nav-blue);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 20px var(--nav-blue);
+    transition: all 0.3s ease;
+}
+
+.education-card-wrapper:nth-child(odd) .timeline-dot {
+    right: -8px; /* Half of dot width */
+}
+
+.education-card-wrapper:nth-child(even) .timeline-dot {
+    left: -8px; /* Half of dot width */
+}
+
+.education-card-wrapper:hover .timeline-dot {
+    background-color: var(--nav-blue);
+    transform: translateY(-50%) scale(1.5);
+}
+
+/* Glassmorphism Card */
+.education-card {
+    background: rgba(17, 34, 64, 0.4); /* Semi-transparent navy */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.education-card-wrapper:nth-child(odd) .education-card {
+    align-items: flex-end;
+}
+
+.education-card-wrapper:nth-child(even) .education-card {
+    align-items: flex-start;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    background: rgba(17, 34, 64, 0.7);
+    border-color: var(--nav-blue);
+    box-shadow: 0 20px 40px -10px rgba(2, 12, 27, 0.5);
+}
+
+/* Content Styling */
+.edu-degree {
+    font-size: 1.5rem;
+    color: var(--soft-white);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.edu-institution {
+    font-size: 1.1rem;
+    color: var(--nav-blue);
+    font-family: inherit;
+    margin: 0;
+}
+
+.edu-meta {
+    font-family: "Fira Code", monospace;
+    font-size: 0.9rem;
+    color: var(--nav-grey);
+    background: rgba(20, 157, 221, 0.05); /* Very subtle blue bg */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(20, 157, 221, 0.1);
+    display: inline-block;
+}
+
+/* Decorative Icon - Faded in background */
+.edu-icon-box {
+    position: absolute;
+    top: 1rem;
+    opacity: 0.05;
+    font-size: 8rem;
+    color: var(--soft-white);
+    pointer-events: none;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+
+.education-card-wrapper:nth-child(odd) .edu-icon-box {
+    left: 1rem;
+}
+
+.education-card-wrapper:nth-child(even) .edu-icon-box {
+    right: 1rem;
+}
+
+.education-card:hover .edu-icon-box {
+    opacity: 0.1;
+    transform: scale(1.1) rotate(5deg);
+    color: var(--nav-blue);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .education-content {
+        gap: 3rem;
+        padding-left: 0;
+    }
+    
+    .education-card-wrapper {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+    }
+
+    .education-card-wrapper:nth-child(odd),
+    .education-card-wrapper:nth-child(even) {
+        align-self: flex-start;
+        text-align: left;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+    }
+    
+    .education-card-wrapper:nth-child(odd) .timeline-dot,
+    .education-card-wrapper:nth-child(even) .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+    
+    .education-card-wrapper:nth-child(odd) .education-card,
+    .education-card-wrapper:nth-child(even) .education-card {
+        align-items: flex-start;
+    }
+}

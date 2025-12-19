@@ -1,17 +1,15 @@
-import { 
+import {
 	DiJavascript1,
-	 DiMysql 
-	} from "react-icons/di";
+	DiMysql
+} from "react-icons/di";
+
 import {
 	FaCss3Alt,
 	FaHtml5,
 	FaReact,
-
 } from "react-icons/fa";
-// import { RiVuejsLine } from "react-icons/ri";
+
 import {
-	
-	
 	SiTypescript,
 	SiPython,
 	SiPhp,
@@ -19,9 +17,11 @@ import {
 	SiFlask,
 	SiFlutter,
 	SiDjango,
-	SiGithub
+	SiGithub,
+
 } from "react-icons/si";
-// import { TbBrandReactNative } from "react-icons/tb";
+
+import FrappeIcon from "../icons/FrappeIcon.jsx";
 
 export const SkillsData = [
 	{
@@ -34,7 +34,7 @@ export const SkillsData = [
 	},
 	{
 		name: "Javascript",
-		icon: <DiJavascript1/>,
+		icon: <DiJavascript1 />,
 	},
 	{
 		name: "React Js",
@@ -44,16 +44,14 @@ export const SkillsData = [
 		name: "TypeScript",
 		icon: <SiTypescript />,
 	},
-	
 	{
 		name: "Flutter",
 		icon: <SiFlutter />,
 	},
-	// {
-	// 	name: "Vue Js",
-	// 	icon: <RiVuejsLine />, 
-	// },
-	
+	{
+		name: "Frappe",
+		icon: <FrappeIcon />,
+	},
 	{
 		name: "Python",
 		icon: <SiPython />,
@@ -64,7 +62,7 @@ export const SkillsData = [
 	},
 	{
 		name: "Git",
-		icon: <SiGithub/>,
+		icon: <SiGithub />,
 	},
 	{
 		name: "Flask",
@@ -72,7 +70,7 @@ export const SkillsData = [
 	},
 	{
 		name: "Django",
-		icon: <SiDjango/>,
+		icon: <SiDjango />,
 	},
 	{
 		name: "Vercel",
@@ -82,4 +80,12 @@ export const SkillsData = [
 		name: "MySQL",
 		icon: <DiMysql />,
 	},
+	// {
+	// 	name: "Cyber Security",
+	// 	icon: <SiKalilinux />,
+	// },
+	// {
+	// 	name: "Android",
+	// 	icon: <SiAndroid />,
+	// },
 ];

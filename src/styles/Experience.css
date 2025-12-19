@@ -1,0 +1,95 @@
+.experience {
+    background-color: var(--section-bgd);
+    color: var(--nav-grey);
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.experience .container {
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.experience-card {
+    background-color: var(--nav-bgd); /* Using dark nav background for contrast */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(20, 157, 221, 0.1); /* Subtle blue border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    border-color: var(--nav-blue);
+}
+
+.exp-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #233554;
+    padding-bottom: 1rem;
+}
+
+.exp-role {
+    font-size: 1.5rem;
+    color: var(--soft-white);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.exp-company {
+    font-size: 1.1rem;
+    color: var(--nav-blue);
+    font-family: "Fira Code", monospace;
+    margin-bottom: 0.25rem;
+}
+
+.exp-date {
+    font-size: 0.9rem;
+    color: var(--nav-deep-grey);
+    font-family: "Fira Code", monospace;
+}
+
+.exp-list {
+    list-style: none;
+    padding: 0;
+}
+
+.exp-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--nav-grey);
+}
+
+/* Bullet point styling */
+.exp-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--nav-blue);
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+    .experience .container {
+        padding: 2rem;
+    }
+    
+    .exp-role {
+        font-size: 1.2rem;
+    }
+}

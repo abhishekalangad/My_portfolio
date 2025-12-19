@@ -1,147 +1,200 @@
-.contact-box {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 2rem;
+
+.contact {
+    min-height: 100vh;
+    padding: 2rem 0;
+    color: white;
 }
 
-.contact-heading {
-	margin-bottom: 2rem;
+.contact .container {
+    max-width: 100rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    gap: 2rem;
+}
+
+.left-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .contact-heading p {
-	line-height: 2;
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+    max-width: 90%;
 }
 
 .contact-hello {
-	display: flex;
-	flex-direction: column;
+    margin-top: 3rem;
 }
 
-.contact-hello p {
-	text-transform: uppercase;
-	font-weight: 700;
-	letter-spacing: 2px;
-	margin-bottom: 1rem;
+.contact-hello p, .contact-socials p {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
 }
 
 .hello-links {
-	color: var(--nav-blue-shade);
-	margin: 0.5rem 0;
-	text-decoration: none;
-	transition: all 0.3s ease-in-out;
+    display: block;
+    font-size: 1.2rem;
+    color: #5d93d7;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .hello-links:hover {
-	color: var(--nav-blue);
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-/* Form */
+.contact-socials {
+    margin-top: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: #a0a0a0;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #5d93d7;
+    transform: translateY(-3px);
+}
+
+/* Right Box Form Styling */
 .right-box {
-	width: 90%;
-	margin: 0 auto;
-	color: var(--white);
-	font-size: 80%;
+    flex: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .form-top {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.name,
-.email {
-	width: 40%;
+.name, .email, .message {
+    display: flex;
+    flex-direction: column;
 }
 
-.name,
-.email,
-.message {
-	display: flex;
-	flex-direction: column;
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
 }
 
-.name label,
-.email label,
-.message label {
-	margin-bottom: 1rem;
+input, textarea {
+    background: transparent !important;
+    border: none;
+    border-bottom: 2px solid #555;
+    padding: 0.8rem 0;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    box-shadow: none !important;
 }
 
-input,
-textarea {
-	background-color: transparent !important;
-	border: 0;
-	outline: none;
-	border-bottom: 1px solid var(--white);
-	padding-bottom: 0.5rem;
-	word-wrap: break-word;
-	color: var(--white);
-}
-
+/* Autofill Hack for Dark Themes */
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-	-webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-	box-shadow: 0 0 0 1000px transparent inset !important;
-	-webkit-text-fill-color: white !important;
-	transition: background-color 5000s ease-in-out 0s;
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #00021a inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus {
-	-webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-	box-shadow: 0 0 0 1000px transparent inset !important;
-	-webkit-text-fill-color: white !important;
-	transition: background-color 5000s ease-in-out 0s;
+input:focus, textarea:focus {
+    border-bottom-color: #5d93d7;
 }
 
-.form-mid {
-	margin-bottom: 4rem;
+textarea {
+    resize: vertical;
+    min-height: 40px;
 }
 
+/* Button Styling */
 .form-btn {
-	display: flex;
-	justify-content: center;
+    text-align: right;
 }
 
-.Toastify__toast {
-    font-size: 12px;
-    padding: 8px 12px;
+.hero-contact {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid #5d93d7;
+    background: transparent;
+    color: #5d93d7;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.Toastify__toast-body {
-    font-size: 12px;
+.hero-contact:hover {
+    background: #5d93d7;
+    color: white;
+}
+
+.hero-contact:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 
-
-/* Media Queries */
+/* Responsive Design */
 @media screen and (max-width: 900px) {
-	.contact-box {
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: 5rem;
-	}
+    .contact-box {
+        flex-direction: column;
+    }
+    
+    .left-box {
+        margin-bottom: 3rem;
+    }
 
-	.right-box {
-		width: 90%;
-		margin: 0 auto;
-	}
+    .form-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 @media screen and (max-width: 550px) {
-	.contact-heading p,
-	.contact-hello p,
-	.hello-links,
-	input,
-	textarea {
-		font-size: 80%;
-	}
+    .contact {
+        padding: 4rem 1rem;
+    }
 
-	.right-box {
-		font-size: 70%;
-	}
+    .contact-heading p {
+        font-size: 1.1rem;
+    }
 }

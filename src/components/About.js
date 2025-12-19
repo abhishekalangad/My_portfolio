@@ -21,9 +21,9 @@ const About = () => {
                   </motion.div>
                   <div className="split-about">
                     <motion.div initial={{x: '-100%', opacity: 0}} whileInView={horizontal} className="about-content">
-                        <p>Hello! My name is Abhishek and I enjoy creating things that live on the internet. My interest in web development started in 2020 when I decided to try out for my first school project — turns out putting together a simple website taught me a lot about HTML & CSS! </p>
-                        <br />
-                        <p> Since then, I've had the opportunity to collaborate with some talented professionals, which has sharpened my skills and helped me grow faster. These days, I'm all about building accessible and inclusive digital products that make a difference. I also enjoy dabbling in design and illustration whenever I can.</p>
+                        <p>Hey! I am an ERPNext Intern with hands-on experience in customizing and extending ERPNext applications using the Frappe Framework. My work primarily involves understanding real business requirements and converting them into reliable, production-ready ERP solutions.</p>
+                        <br/>
+                        <p>Since then, I’ve had the opportunity to work closely with experienced professionals on live ERP implementations, which has helped me strengthen my technical foundation and understanding of enterprise workflows. These days, I focus on developing clean customizations—such as server and client scripts, patches, and dynamic print formats—ensuring accuracy, consistency, and alignment with business needs. I also pay close attention to layout precision and data behavior while building print formats that match client specifications exactly. </p>
                     </motion.div>
                     <motion.div initial={{x: '50', opacity: 0}} whileInView={horizontal}  className='about-img'>
                         <img src={ProfileImg} alt="Profile" />

@@ -93,9 +93,9 @@ const HeroSection = ({ nav, handleNav }) => {
 				initial='hidden'
 				whileInView='visible'
 				className='hero-content'>
-			<p className='hero-intro'>
- 			<h4>{"<Abhishek/>"}</h4>
-			</p>
+				<p className='hero-intro'>
+					<h4>{"<Abhishek/>"}</h4>
+				</p>
 
 				<p className='hero-desc'>
 					<span className='hero-desc-sub'>Front End Developer.</span>

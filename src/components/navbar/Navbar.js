@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/Navbar.css";
 import { FaHome, FaLaptop } from "react-icons/fa";
-import { BiBookContent, BiServer, BiEnvelope } from "react-icons/bi";
+import { BiBookContent, BiServer, BiEnvelope, BiBriefcase } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
 import ProfileImg from "../../images/profile_me.jpg";
@@ -111,6 +111,19 @@ const Navbar = ({ nav, handleNav }) => {
 							<BiServer className='mid-icon' />
 							<li className='mid-link' onClick={handleNav}>
 								Services
+							</li>
+						</Link>
+						<Link
+							activeClass='active'
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
+							to='experience'
+							className='mid-links'>
+							<BiBriefcase className='mid-icon' />
+							<li className='mid-link' onClick={handleNav}>
+								Experience
 							</li>
 						</Link>
 						<Link

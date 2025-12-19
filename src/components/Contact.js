@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/Contact.css";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
 	const fade = {
@@ -40,36 +41,44 @@ const Contact = () => {
 		e.preventDefault();
 		setIsSubmitting(true);
 
-		const form = e.target;
-		const formDataToSubmit = new FormData(form);
-
-		fetch("/", {
+		fetch(`https://formspree.io/f/${process.env.REACT_APP_FORMSPREE_FORM_ID}`, {
 			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: new URLSearchParams(formDataToSubmit).toString(),
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				...formData,
+				submittedAt: new Date().toLocaleString(),
+				_subject: `New Contact from ${formData.name} - ${new Date().toLocaleString()}`,
+			}),
 		})
-			.then(() => {
-				toast.success("Thanks for your message! I'll get back to you soon.", {
-					position: "top-left",
-					autoClose: 2000,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-				});
-				setFormData({ name: "", email: "", message: "" });
-				setIsSubmitting(false);
+			.then((response) => {
+				if (response.ok) {
+					toast.success("Thanks for your message! I'll get back to you soon.", {
+						position: "top-left",
+						autoClose: 2000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+					});
+					setFormData({ name: "", email: "", message: "" });
+					setIsSubmitting(false);
+				} else {
+					response.json().then((data) => {
+						if (Object.hasOwn(data, 'errors')) {
+							console.error(data["errors"].map(error => error["message"]).join(", "));
+							toast.error(data["errors"].map(error => error["message"]).join(", "));
+						} else {
+							toast.error("Submission failed. Please try again.");
+						}
+						setIsSubmitting(false);
+					});
+				}
 			})
 			.catch((error) => {
-				toast.error("Submission failed. Please try again.", {
-					position: "top-left",
-					autoClose: 2000,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-				});
-				console.error(error);
+				toast.error("Submission failed. Please try again.");
+				console.error("Formspree Error:", error);
 				setIsSubmitting(false);
 			});
 	};
@@ -98,21 +107,25 @@ const Contact = () => {
 									request or question, don’t hesitate to use the form
 								</p>
 							</div>
-							<div className='contact-hello'>
-								<p>Say Hello</p>
-								<Link
-									className='hello-links'
-									to='//wa.me/+918606243568'
-									target='_blank'>
-									wa.me/Hello
-								</Link>
-								<a
-									className='hello-links'
-									href='mailto:abhishek.k@lead.ac.in'
-									target='_blank'
-									rel='noreferrer'>
-									abhishek.k@lead.ac.in
-								</a>
+
+							<div className='contact-socials'>
+								<p>Follow Me</p>
+								<div className='social-icons'>
+									<a
+										href='https://linkedin.com/in/abhishek-kulangara'
+										target='_blank'
+										rel='noreferrer'
+										className='social-link'>
+										<FaLinkedin />
+									</a>
+									<a
+										href='https://github.com/abhishekalangad'
+										target='_blank'
+										rel='noreferrer'
+										className='social-link'>
+										<FaGithub />
+									</a>
+								</div>
 							</div>
 						</motion.div>
 						<motion.div
@@ -121,13 +134,7 @@ const Contact = () => {
 							whileInView={verticalLeft}>
 							<form
 								name='contact-form'
-								method='POST'
-								data-netlify='true'
-								netlify-honeypot='bot-field'
-								action='POST'
 								onSubmit={handleSubmit}>
-								<input type='hidden' name='form-name' value='contact-form' />
-								<input type='hidden' name='bot-field' />
 
 								<div className='form-top'>
 									<div className='name'>
@@ -166,7 +173,7 @@ const Contact = () => {
 											id='message'
 											value={formData.message}
 											onChange={handleChange}
-											placeholder='Hi, I think I need you to work on this particular product. Reach out as soon as you can'
+											placeholder='Enter your message'
 											required></textarea>
 									</div>
 								</div>
