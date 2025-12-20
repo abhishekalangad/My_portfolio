@@ -1,74 +1,130 @@
-/* Side Navbar */
+/* Glass Neon Sidebar */
+:root {
+    --glass-bg: rgba(10, 25, 47, 0.75);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --neon-glow: 0 0 10px rgba(100, 255, 218, 0.5), 0 0 20px rgba(100, 255, 218, 0.3);
+    --text-glow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
 .navbar {
-	background-color: var(--section-bgd);
+	background: var(--glass-bg);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	color: var(--white);
 	position: fixed;
 	top: 0;
 	left: -100%;
 	bottom: 0;
+    width: 300px;
 	opacity: 0;
-	overflow-y: scroll;
-	transition: all 0.5s ease-in-out;
+	overflow-y: auto;
+	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	z-index: 99999;
+	box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+    border-right: var(--glass-border);
 }
 
 .navbar.active {
 	left: 0;
 	opacity: 1;
+    box-shadow: 0 0 50px rgba(10, 25, 47, 0.8), inset -5px 0 20px rgba(255, 255, 255, 0.02);
 }
 
 .navbar::-webkit-scrollbar {
-	scroll-margin: 0;
+    width: 6px;
+}
+.navbar::-webkit-scrollbar-thumb {
+    background: rgba(100, 255, 218, 0.2);
+    border-radius: 3px;
 }
 
 .navbar-container {
-	padding: 1rem 1.5rem;
+	padding: 2rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Profile Section */
 .top-details {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
+    position: relative;
 }
 
 .img__cover {
-	height: 100px;
-	width: 100px;
+	height: 110px;
+	width: 110px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	object-fit: cover;
-    object-position: bottom;
+    position: relative;
+    margin-bottom: 1.5rem;
 }
+
+/* Rotating Neon Ring */
+.img__cover::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--nav-blue);
+    border-right-color: var(--nav-blue);
+    animation: spinRing 3s linear infinite;
+    box-shadow: var(--neon-glow);
+}
+
+.img__cover::after {
+    content: '';
+    position: absolute;
+    top: -12px; left: -12px; right: -12px; bottom: -12px;
+    border-radius: 50%;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    animation: spinRingReverse 5s linear infinite;
+}
+
+@keyframes spinRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes spinRingReverse { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+
 .profile-pic-small {
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	margin-bottom: 1rem;
-	border: 5px solid var(--nav-deep-blue);
+	border: 3px solid rgba(10, 25, 47, 0.8); /* Dark bezel */
+    object-fit: cover;
+    z-index: 2;
 }
 
 .profile-name {
-	font-size: 1rem;
-	font-weight: 600;
+	font-size: 1.5rem;
+	font-weight: 700;
 	font-family: "Poppins", sans-serif;
 	text-decoration: none;
 	color: var(--white);
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 	cursor: pointer;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
 }
 
+/* Social Links Mini-Bar */
 .nav-links {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	gap: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    list-style: none; /* Remove bullets from UL */
+    margin: 0;
 }
 
-.nav-links li,
-.mid-details li {
-	list-style: none;
+.nav-links li {
+    list-style: none; /* Remove bullets from LI explicitly */
 }
 
 .nav-link {
@@ -77,24 +133,24 @@
 	align-items: center;
 	cursor: pointer;
 	text-decoration: none;
-	color: var(--white);
-	margin: 0 0.3rem;
-	padding: 0.7rem;
-	background-color: var(--nav-deep-blue);
+	color: var(--nav-grey);
+	padding: 0.5rem;
+    font-size: 1.1rem;
 	border-radius: 50%;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-	background-color: var(--nav-blue);
+	color: var(--nav-blue);
+    background: rgba(100, 255, 218, 0.1);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+    transform: translateY(-3px);
 }
 
+/* Navigation Links */
 .mid-details {
-	padding: 1rem;
-}
-
-.flex {
-	display: flex;
+	padding: 0 0.5rem;
+    flex-grow: 1; /* Push footer down */
 }
 
 .mid-links {
@@ -103,37 +159,69 @@
 	color: var(--nav-grey);
 	cursor: pointer;
 	text-decoration: none;
-	padding: 1rem 0;
-	font-size: 0.9rem;
-	transition: all 0.3s ease-in-out;
+	padding: 0.8rem 1rem;
+	font-size: 1rem;
+	transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	position: relative;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.mid-links.active {
-	color: var(--nav-blue);
+/* Hover & Active State */
+.mid-links::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--nav-blue);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
 }
 
-.mid-links:hover {
+.mid-links:hover, .mid-links.active {
 	color: var(--white);
+    background: linear-gradient(90deg, rgba(100, 255, 218, 0.1) 0%, transparent 100%);
+    box-shadow: inset 1px 0 0 0 rgba(100, 255, 218, 0.2);
+    padding-left: 1.5rem; /* Slide right */
+    text-shadow: var(--text-glow);
 }
 
-.mid-links:hover .mid-icon {
+.mid-links:hover::before, .mid-links.active::before {
+    transform: scaleY(1);
+    box-shadow: 0 0 10px var(--nav-blue);
+}
+
+.mid-links:hover .mid-icon, .mid-links.active .mid-icon {
 	color: var(--nav-blue);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px var(--nav-blue));
 }
 
 .mid-icon {
-	margin-right: 1rem;
-	font-size: 1.5rem;
+	margin-right: 1.2rem;
+	font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
+/* Footer */
 .copy {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .copyright {
-	color: var(--white);
-	font-size: 65%;
+	color: var(--nav-grey);
+	font-size: 0.75rem;
 	font-family: "Quicksand", sans-serif;
+    text-align: center;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
 }

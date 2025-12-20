@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Navbar.css";
-import { FaHome, FaLaptop } from "react-icons/fa";
+import { FaHome, FaLaptop, FaUserGraduate, FaCertificate } from "react-icons/fa";
 import { BiBookContent, BiServer, BiEnvelope, BiBriefcase } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
@@ -60,7 +60,7 @@ const Navbar = ({ nav, handleNav }) => {
 						</Link>
 						<NavLinks handleNav={handleNav} />
 					</div>
-					<ul className='mid-details'>
+					<div className='mid-details'>
 						<Link
 							activeClass='active'
 							spy={true}
@@ -70,9 +70,9 @@ const Navbar = ({ nav, handleNav }) => {
 							to='home'
 							className='mid-links'>
 							<FaHome className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								Home
-							</li>
+							</span>
 						</Link>
 						<Link
 							activeClass='active'
@@ -83,9 +83,9 @@ const Navbar = ({ nav, handleNav }) => {
 							to='about'
 							className='mid-links'>
 							<FiUser className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								About
-							</li>
+							</span>
 						</Link>
 						<Link
 							activeClass='active'
@@ -96,9 +96,9 @@ const Navbar = ({ nav, handleNav }) => {
 							to='skills'
 							className='mid-links'>
 							<FaLaptop className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								Skills
-							</li>
+							</span>
 						</Link>
 						<Link
 							activeClass='active'
@@ -109,9 +109,9 @@ const Navbar = ({ nav, handleNav }) => {
 							to='services'
 							className='mid-links'>
 							<BiServer className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								Services
-							</li>
+							</span>
 						</Link>
 						<Link
 							activeClass='active'
@@ -122,9 +122,9 @@ const Navbar = ({ nav, handleNav }) => {
 							to='experience'
 							className='mid-links'>
 							<BiBriefcase className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								Experience
-							</li>
+							</span>
 						</Link>
 						<Link
 							activeClass='active'
@@ -135,9 +135,35 @@ const Navbar = ({ nav, handleNav }) => {
 							to='works'
 							className='mid-links'>
 							<BiBookContent className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								Works
-							</li>
+							</span>
+						</Link>
+						<Link
+							activeClass='active'
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
+							to='education'
+							className='mid-links'>
+							<FaUserGraduate className='mid-icon' />
+							<span className='mid-link' onClick={handleNav}>
+								Education
+							</span>
+						</Link>
+						<Link
+							activeClass='active'
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
+							to='certifications'
+							className='mid-links'>
+							<FaCertificate className='mid-icon' />
+							<span className='mid-link' onClick={handleNav}>
+								Certifications
+							</span>
 						</Link>
 						<Link
 							activeClass='active'
@@ -148,11 +174,11 @@ const Navbar = ({ nav, handleNav }) => {
 							to='contact'
 							className='mid-links'>
 							<BiEnvelope className='mid-icon' />
-							<li className='mid-link' onClick={handleNav}>
+							<span className='mid-link' onClick={handleNav}>
 								Contact
-							</li>
+							</span>
 						</Link>
-					</ul>
+					</div>
 					<div className='copy'>
 						<small className='copyright'>
 							© Copyright ©2025 <br /> All rights reserved |
