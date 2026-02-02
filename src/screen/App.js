@@ -17,7 +17,7 @@ function App() {
     },
     visible: {
       opacity: 1,
-      transition:{
+      transition: {
         duration: 1
       }
     }
@@ -25,21 +25,21 @@ function App() {
 
 
   return (
-    loading ? 
-    <div className="loader">
-      <div className="svg-wrapper">
-        <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-          <rect className="shape" height="60" width="200" />
-        </svg>        
-        <motion.p variants={loadText} initial='hidden' animate='visible' className="text">Welcome...</motion.p>
+    loading ?
+      <div className="loader">
+        <div className="svg-wrapper">
+          <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+            <rect className="shape" height="60" width="200" />
+          </svg>
+          <motion.p variants={loadText} initial='hidden' animate='visible' className="text">Welcome...</motion.p>
+        </div>
       </div>
-    </div>
-    :
-    <div className="App">
-      <Router>
-        <HomePage />
-      </Router>
-    </div>
+      :
+      <div className="App">
+        <Router>
+          <HomePage />
+        </Router>
+      </div>
   );
 }
 

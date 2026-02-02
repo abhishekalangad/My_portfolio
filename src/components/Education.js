@@ -15,15 +15,28 @@ const Education = () => {
         {
             degree: "MASTER OF COMPUTER APPLICATION",
             institution: "LEAD COLLEGE (AUTONOMOUS), PALAKKAD",
-            date: "2024 – PRESENT",
-            grade: ""
+            date: "2024 – 2026",
+            grade: "Pursuing",
+            current: true
         },
         {
             degree: "BACHELOR OF COMPUTER APPLICATION",
             institution: "UNIVERSITY OF CALICUT",
             date: "2020 - 2023",
             grade: "CGPA: 6.71"
-        }
+        },
+        {
+            degree: "HIGHER SECONDARY EDUCATION (COMPUTER SCIENCE)",
+            institution: "GOVT. HIGHER SECONDARY SCHOOL, KADAMBUR",
+            date: "2018 – 2020",
+            grade: "Percentage: 74.1%"
+        },
+        {
+            degree: "SECONDARY EDUCATION (CLASS X)",
+            institution: "H.S. KATAMPAZHIPURAM",
+            date: "2017 – 2018",
+            grade: "Percentage: 89%"
+        },
     ];
 
     return (
@@ -50,13 +63,16 @@ const Education = () => {
                             transition={{ duration: 0.8, delay: index * 0.2, type: "spring", bounce: 0.4 }}
                             viewport={{ once: true }}
                         >
-                            <div className="timeline-dot"></div>
+                            <div className={`timeline-dot ${edu.current ? 'current-dot' : ''}`}></div>
                             <div className="education-card">
                                 <div className="edu-icon-box">
                                     <FaUserGraduate className="edu-icon" />
                                 </div>
                                 <div className="edu-details">
-                                    <h3 className="edu-degree">{edu.degree}</h3>
+                                    <div className="edu-degree-row">
+                                        <h3 className="edu-degree">{edu.degree}</h3>
+                                        {edu.current && <span className="curr-badge">Present</span>}
+                                    </div>
                                     <p className="edu-institution">{edu.institution}</p>
                                     <div className="edu-meta">
                                         <span className="edu-date">{edu.date}</span>
