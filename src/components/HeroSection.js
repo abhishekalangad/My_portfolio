@@ -98,7 +98,7 @@ const HeroSection = ({ nav, handleNav }) => {
 				</p>
 
 				<p className='hero-desc'>
-					<span className='hero-desc-sub'>ERPNext Developer.</span>
+					<span className='hero-desc-sub'>Software Developer.</span>
 				</p>
 			</motion.div>
 			<motion.span

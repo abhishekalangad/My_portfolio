@@ -21,9 +21,9 @@ const About = () => {
                   </motion.div>
                   <div className="split-about">
                     <motion.div initial={{x: '-100%', opacity: 0}} whileInView={horizontal} className="about-content">
-                        <p>Hey! I am an ERPNext Intern with hands-on experience in customizing and extending ERPNext applications using the Frappe Framework. My work primarily involves understanding real business requirements and converting them into reliable, production-ready ERP solutions.</p>
+                        <p>Hey! I am a Software Developer with hands-on experience in building, customizing, and extending enterprise applications. My work primarily involves understanding real business requirements and converting them into reliable, production-ready software solutions.</p>
                         <br/>
-                        <p>Since then, I’ve had the opportunity to work closely with experienced professionals on live ERP implementations, which has helped me strengthen my technical foundation and understanding of enterprise workflows. These days, I focus on developing clean customizations—such as server and client scripts, patches, and dynamic print formats—ensuring accuracy, consistency, and alignment with business needs. I also pay close attention to layout precision and data behavior while building print formats that match client specifications exactly. </p>
+                        <p>I’ve had the opportunity to work closely with experienced professionals on live software implementations, which has helped me strengthen my technical foundation and understanding of scalable workflows. These days, I focus on developing clean code—such as backend logic, client-side scripts, and dynamic interfaces—ensuring accuracy, consistency, and alignment with business needs. I also pay close attention to layout precision and robust data behavior while building features that match client specifications exactly.</p>
                     </motion.div>
                     <motion.div initial={{x: '50', opacity: 0}} whileInView={horizontal}  className='about-img'>
                         <img src={ProfileImg} alt="Profile" />
